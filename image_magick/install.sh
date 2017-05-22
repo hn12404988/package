@@ -9,5 +9,6 @@ cd /tmp && \
 	make clean && \
 	echo "export PKG_CONFIG_PATH=/usr/lib/pkgconfig" >> /etc/bashrc && \
 	source /etc/bashrc && \
-	rm -rf /tmp/ImageMagick.tar.gz && rm -rf /tmp/ImageMagick*
+	rm -rf /tmp/ImageMagick.tar.gz && rm -rf /tmp/ImageMagick* && \
+	ldconfig
 #printf "export PKG_CONFIG_PATH=/usr/lib/pkgconfig" >> /home/willy/.bash_profile
