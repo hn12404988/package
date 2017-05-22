@@ -1,4 +1,5 @@
 #!/bin/bash
+# Install GCC 5.4
 yum install -y libmpc-devel mpfr-devel gmp-devel
 yum install -y zlib-devel*
 mkdir /tmp/gcc && cd /tmp/gcc
@@ -11,3 +12,13 @@ mkdir /usr/local/gcc_5.4
 make -j 4
 make install
 cd /tmp && rm -rf /tmp/gcc
+# Upgrade libstdc++ to new one
+cp /usr/local/gcc_5.4/lib64/libstdc++.so.6.0.21 /usr/lib64
+cd /usr/lib64
+rm -rf libstdc++.so.6
+ln -s libstdc++.so.6.0.21 libstdc++.so.6
+# Link new gcc to command line
+cd /usr/bin
+rm -rf g++ && rm -rf gcc
+ln -s /usr/local/gcc_5.4/bin/g++ g++
+ln -s /usr/local/gcc_5.4/bin/gcc gcc
