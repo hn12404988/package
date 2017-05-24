@@ -5,6 +5,7 @@ yum install -y zlib-devel*
 mkdir /tmp/gcc && cd /tmp/gcc
 cd /tmp/gcc
 curl ftp://ftp.gnu.org/pub/gnu/gcc/gcc-5.4.0/gcc-5.4.0.tar.bz2 -O
+ls ./
 tar xvfj /tmp/gcc/gcc-5.4.0.tar.bz2
 cd /tmp/gcc/gcc-5.4.0
 mkdir /usr/local/gcc_5.4
